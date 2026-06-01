@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potato Portal - Create Listing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <h2>🥔 Potato Portal</h2>
+        </header>
+        
+        <main class="app-content">
+            <div class="section-title" style="margin-bottom: 15px;">🌾 Add Your Crop Details</div>
+            
+            <div class="card">
+                <label style="display:block; margin-bottom:8px; font-weight:600; color:#333; font-size:0.9rem;">Crop Name:</label>
+                <input type="text" id="cropName" placeholder="e.g. Jasmine Rice" style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:10px; background-color:#f9f9f9;">
+                
+                <label style="display:block; margin-bottom:8px; font-weight:600; color:#333; font-size:0.9rem;">Quantity Available (kg):</label>
+                <input type="number" id="cropQty" placeholder="e.g. 500" style="width:100%; padding:12px; margin-bottom:15px; border:1px solid #ddd; border-radius:10px; background-color:#f9f9f9;">
+                
+                <label style="display:block; margin-bottom:8px; font-weight:600; color:#333; font-size:0.9rem;">Your Asking Price per kg ($):</label>
+                <input type="text" placeholder="e.g. 0.70" style="width:100%; padding:12px; margin-bottom:25px; border:1px solid #ddd; border-radius:10px; background-color:#f9f9f9;">
+                
+                <button type="button" onclick="saveAndPublish()" class="primary-btn">Publish Listing</button>
+            </div>
+        </main>
+        
+        <nav class="app-nav">
+            <a href="index.html" class="nav-btn active">👨‍🌾 Farmer</a>
+            <a href="buyer.html" class="nav-btn">🛒 Buyer</a>
+            <a href="market.html" class="nav-btn">📈 Market</a>
+        </nav>
+    </div>
+
+    <script>
+        function saveAndPublish() {
+            const name = document.getElementById('cropName').value;
+            const qty = document.getElementById('cropQty').value;
+            
+            if (name && qty) {
+                // Save temporary values to browser cache
+                localStorage.setItem('newCrop', name);
+                localStorage.setItem('newQty', qty);
+                // Return to the clean Farmer dashboard
+                window.location.href = "index.html";
+            } else {
+                alert("Please fill in the Crop Name and Quantity!");
+            }
+        }
+    </script>
+</body>
+</html>

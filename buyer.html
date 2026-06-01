@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Potato Portal - Buyer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <h2>🥔 Potato Portal</h2>
+        </header>
+        
+        <main class="app-content">
+            <div class="section-title">🛒 Buyer Marketspace</div>
+            
+            <form onsubmit="event.preventDefault(); return false;" autocomplete="off">
+                <div class="search-box">
+                    <input type="text" id="searchInput" onkeyup="filterCrops()" placeholder="Search crops, vegetables, fruits...">
+                </div>
+            </form>
+
+            <div class="card product-card searchable-card">
+                <div class="product-header">
+                    <strong>Sokha M. (Battambang)</strong>
+                    <span class="verified-tag">✓ Verified Farmer</span>
+                </div>
+                <p class="product-details">Offering 1,000kg of premium Jasmine Rice. Ready for pickup.</p>
+                <div class="product-footer">
+                    <span class="price">$0.65 / kg</span>
+                    <a href="tel:+85512345678" class="contact-btn" style="text-decoration:none;">📞 Call Farmer</a>
+                </div>
+            </div>
+
+            <div class="card product-card searchable-card">
+                <div class="product-header">
+                    <strong>Bopa V. (Kampot)</strong>
+                    <span class="verified-tag">✓ Verified Farmer</span>
+                </div>
+                <p class="product-details">Fresh Black Pepper available. Organic certified.</p>
+                <div class="product-footer">
+                    <span class="price">$4.50 / kg</span>
+                    <a href="tel:+85587654321" class="contact-btn" style="text-decoration:none;">📞 Call Farmer</a>
+                </div>
+            </div>
+        </main>
+        
+        <nav class="app-nav">
+            <a href="index.html" class="nav-btn">👨‍🌾 Farmer</a>
+            <a href="buyer.html" class="nav-btn active">🛒 Buyer</a>
+            <a href="market.html" class="nav-btn">📈 Market</a>
+        </nav>
+    </div>
+
+    <script>
+        function filterCrops() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const cards = document.getElementsByClassName('searchable-card');
+
+            for (let i = 0; i < cards.length; i++) {
+                const detailsText = cards[i].getElementsByClassName('product-details')[0].innerText.toLowerCase();
+                
+                if (detailsText.includes(filter)) {
+                    cards[i].style.display = "";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

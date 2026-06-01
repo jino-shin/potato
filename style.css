@@ -1,0 +1,215 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Smartphone Wrapper Simulation */
+.app-container {
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    max-height: 800px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    border: 6px solid #222; /* Fakes a phone screen border */
+}
+
+/* Header */
+.app-header {
+    background-color: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-weight: 700;
+}
+
+/* Content Frame */
+.app-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f8faf8;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Standard Cards */
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    border: 1px solid #eaeaea;
+}
+
+.action-card {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border: none;
+}
+
+.action-card h3 {
+    color: #1b5e20;
+    margin-bottom: 6px;
+}
+
+.action-card p {
+    font-size: 0.85rem;
+    color: #4b634d;
+    margin-bottom: 12px;
+}
+
+/* Buttons */
+.primary-btn {
+    background-color: #1b5e20;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+}
+
+.contact-btn {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Rows and Lists */
+.item-row, .table-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 0.9rem;
+}
+
+.item-row:last-child, .table-row:last-child {
+    border-bottom: none;
+}
+
+/* Tags and Badges */
+.status {
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+.status-pending { background-color: #fff3e0; color: #e65100; }
+.status-success { background-color: #e8f5e9; color: #1b5e20; }
+
+.verified-tag {
+    font-size: 0.7rem;
+    color: #2e7d32;
+    background: #e8f5e9;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Search Bar Mock */
+.search-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #f1f3f4;
+}
+
+/* Feed Cards */
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+}
+.product-details {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 12px;
+}
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.price {
+    font-weight: 700;
+    color: #1b5e20;
+}
+
+/* Data Table Elements */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: #888;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.divider { border: 0; border-top: 1px solid #eee; }
+.trend { font-size: 0.8rem; font-weight: 600; }
+.trend.up { color: #2e7d32; }
+.trend.stable { color: #757575; }
+.trend.down { color: #c62828; }
+
+/* Bottom Tab Navigation Bar */
+.app-nav {
+    display: flex;
+    background-color: #ffffff;
+    border-top: 1px solid #eee;
+    height: 65px;
+}
+
+.nav-btn {
+    flex: 1;
+    text-decoration: none;
+    color: #757575;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.nav-btn.active {
+    color: #1b5e20;
+    background-color: #f4fbf4;
+}
